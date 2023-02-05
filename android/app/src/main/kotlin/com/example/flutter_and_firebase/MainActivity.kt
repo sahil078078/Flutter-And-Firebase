@@ -1,4 +1,4 @@
-package com.example.flutter_and_firebase
+package com.example.fire_flutter_sahil
 
 import io.flutter.embedding.android.FlutterActivity
 

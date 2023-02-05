@@ -1,0 +1,39 @@
+ {
+  "project_info": {
+    "project_number": "1003197754370",
+    "project_id": "fire-flutter-5ed27",
+    "storage_bucket": "fire-flutter-5ed27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003197754370:android:7d9a93977f57df70f38b1b",
+        "android_client_info": {
+          "package_name": "com.example.fire_flutter_sahil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003197754370-o66u3m41neh4svqihjbfjhnbh0261asa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkNmNQMS4muxQHiPfpWopO60FHpuMhRjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003197754370-o66u3m41neh4svqihjbfjhnbh0261asa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
