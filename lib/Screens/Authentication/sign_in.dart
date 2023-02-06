@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_and_firebase/Models/user_model.dart';
@@ -8,7 +9,8 @@ import 'package:flutter_and_firebase/Services/auth.dart';
 import '../Components/my_text_form_field_fireflutter.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+  final VoidCallback toggleView;
+  const SignIn({super.key, required this.toggleView});
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -86,6 +88,7 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
             ),
+            const SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.brown.shade600,
@@ -93,6 +96,36 @@ class _SignInState extends State<SignIn> {
               ),
               onPressed: () async {},
               child: Text("SignIn"),
+            ),
+            const SizedBox(height: 15),
+            Center(
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  children: <InlineSpan>[
+                    TextSpan(
+                      text: "Don't have account  ?  ",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    TextSpan(
+                      text: "Create a new account",
+                      style: TextStyle(
+                        fontSize: 14.5,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.brown,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          widget.toggleView();
+                        },
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
