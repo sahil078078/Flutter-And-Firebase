@@ -34,6 +34,29 @@ class AuthService {
 
   //  signIn with email & password
 
+  Future<User?> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      UserCredential result = await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      User? user = result.user;
+
+      debugPrint("SignIn result : $result");
+      debugPrint("SignIn User : $user");
+      return user;
+    } on FirebaseAuthException catch (e) {
+      debugPrint('SignInWithEmail&Pass ExceptionError : $e');
+      return null;
+    } catch (e) {
+      debugPrint('SignInWithEmail&Pass CatchError : $e');
+      return null;
+    }
+  }
+
   // register with email & password
 
   Future<User?> registerWithEmailAndPassword({

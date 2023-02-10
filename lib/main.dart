@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'FireFlutter',
-        home: const Wrapper(),
+        home: const Wrapper(), 
       ),
     );
   }
