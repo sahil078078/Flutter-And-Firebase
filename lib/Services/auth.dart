@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_and_firebase/Models/user_model.dart';
@@ -39,6 +41,8 @@ class AuthService {
     required String password,
   }) async {
     try {
+      debugPrint('eMail : $email');
+      debugPrint('Password : $password');
       UserCredential result = await _auth.signInWithEmailAndPassword(
         email: email,
         password: password,
@@ -49,6 +53,10 @@ class AuthService {
       debugPrint("SignIn User : $user");
       return user;
     } on FirebaseAuthException catch (e) {
+      debugPrint("email : ${e.email}");
+      debugPrint("plugIn : ${e.plugin}");
+      debugPrint("code : ${e.code}");
+      debugPrint("Credential : ${e.credential}");
       debugPrint('SignInWithEmail&Pass ExceptionError : $e');
       return null;
     } catch (e) {
